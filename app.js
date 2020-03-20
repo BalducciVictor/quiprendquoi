@@ -6,6 +6,7 @@ const axios = require('axios');
 const app = express();
 app.set('view engine', 'pug');
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static('public'));
 
 //demande par le client le l'URL / send la page index
 app.get('/', function(req, res) {
