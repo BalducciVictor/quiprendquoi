@@ -47,6 +47,8 @@ app.post('/party/gift', function(req, res) {
     //Recuperer les données avec un call axios id user et author
     console.log(req.params.id);
     //Ici id est undefined 
+
+    //Post les données a l'api
     axios.post(`${process.env.API_URL}/party/${req.params.id}/items
     P`, obj)
         .then(({ data }) => res.redirect(`/party/${data._id}`))
