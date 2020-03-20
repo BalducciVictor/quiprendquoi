@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "concurrently --kill-others \"npm run sass\" \"nodemon app.js\" \"watchify scripts/test.js -o public/script.js\"",
+    "start": "concurrently --kill-others \"npm run sass\" \"nodemon app.js\" \"watchify scripts/*.js -o public/script.js\"",
     "sass": "node-sass styles/style.scss public/style.css -w --output-style compressed",
-    "watchify": "watchify scripts/test.js -o public/script.js"
+    "watchify": "watchify scripts/*.js -o public/script.js"
   },
   "repository": {
     "type": "git",
