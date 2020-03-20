@@ -1,3 +1,18 @@
 include ./partials/header.pug
 h1 Qui prend quoi ?
-h2 Page événement
+h2= party.name
+h3 Créé par #{party.author}
+label(for="url") Partagez l'événement
+input(id="url" value=`${url}`)
+
+h4 Gift
+form(method="post" action="/party/gift")
+  div
+    label(for="gift") Nom de l'événement
+    input(name="gift" id="gift" required minlength="3" placeholder="Iphone")
+  button(type="submit") Créer
+
+h4 Liste des cadeaux
+ul
+//  each gift in party.gifts
+    li= gift
