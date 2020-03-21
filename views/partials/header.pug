@@ -6,6 +6,7 @@ html(lang="fr")
     meta(http-equiv="X-UA-Compatible", content="ie=edge")
     link(rel="stylesheet" href="/style.css")
     script(src="/script.js" async)
+    link(rel="manifest" href="/manifest.json")
     script.
       if (navigator.serviceWorker) {
         navigator.serviceWorker.register("/sw.js")
