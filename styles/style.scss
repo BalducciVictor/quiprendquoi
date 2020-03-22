@@ -4,10 +4,64 @@
 
 @import 'blocs/newParty.scss';
 
-form {
-    border: 1px solid blue;
-  
-    div {
-      border: 1px solid red;
-    }
+body { 
+  background-color: #fafafa;
+  color: #161616;
+  font-family: Roboto, arial, sans-serif;
+  margin: 0% 2%;
+  h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    font-weight: bold;
+    margin: 3% 0%;
+  }
+  h2 {
+    font-size: 2rem;
+    font-weight: 500;
+    color: rgb(12, 59, 146);
+    margin: 2% 0%;
+    text-transform: uppercase;
+  }
+  h3 {
+    font-size: 1.25rem;
+    font-weight: 200;
+    margin: 1% 0%;
+  }
+  button{
+    padding: 5px;
+    background-color: rgb(12, 59, 146);
+    color: #fafafa;
+    font-weight: bold;
+    border-radius: 3px;
+  }
+}
+div h4{
+    font-size: 1.25rem;
+    font-weight: 200;
+    color: rgb(12, 59, 146);
+    margin: 2% 0%;
+    text-decoration: underline ;
+}
+
+div.items{
+  form {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      width: 20%;
+      input{
+        margin: 7px 0px;
+      }
+  }
+}
+div.itemsList{
+  margin-bottom: 2%;
+  form{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  button{
+    margin-left: 5px;
+  }
 }

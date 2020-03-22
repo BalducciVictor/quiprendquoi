@@ -6,18 +6,25 @@ script.
 h1 Qui prend quoi ?
 h2= party.name
 h3 Créé par #{party.author}
-label(for="url") Partagez l'événement
-input(id="url" value=`${url}` data-clipboard=`${url}` data-share-url=`${url}` data-share-title=`${party.name}` data-share-text=`${party.author} t'invite a la partyyyy ${party.name}`)
 
+div.items
+  h4 Items
+  form(method="post" action=`/party/${party._id}/items`)
+    label(for="name") Ajouter un item 
+    input(name="name" id="name" placeholder="Chips" required)
+    label(for="user") Par Qui ? 
+    input(name="user" id="user" placeholder="Bastien" required)
+    button(type="submit") Envoyer 
 
-h4 Gift
-form(method="post" action="/party/gift")
-  div
-    label(for="gift") Nom de l'événement
-    input(name="gift" id="gift" required minlength="3" placeholder="Iphone")
-  button(type="submit") Créer
+div.itemsList
+    h4 Items ajoutés
+    ul
+      each item in party.items
+        li
+          form(method="post" action=`/party/${party._id}/items/${item._id}`)
+            p= `${item.user} --> ${item.name}`
+            button(type="submit") Supprimer
 
-h4 Liste des cadeaux
-ul
-//  each gift in party.gifts
-    li= gift
+div
+  label(for="url") Partagez l'événement
+  input(id="url" value=`${url}` data-clipboard=`${url}` data-share-url=`${url}` data-share-title=`${party.name}` data-share-text=`${party.author} t'invite a la partyyyy ${party.name}`)
